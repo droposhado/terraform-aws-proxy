@@ -3,5 +3,5 @@ resource "aws_apigatewayv2_integration" "proxy" {
   integration_type = "HTTP_PROXY"
 
   integration_method = "ANY"
-  integration_uri    = "${var.proxy_url}{proxy}"
+  integration_uri    = "${var.proxy_url}/{proxy}"
 }
