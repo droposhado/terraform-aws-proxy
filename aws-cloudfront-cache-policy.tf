@@ -11,7 +11,7 @@ resource "aws_cloudfront_cache_policy" "proxy" {
     }
     headers_config {
       header_behavior = "whitelist"
-      headers = {
+      headers {
         items = [
           "Origin",
           "Host",
