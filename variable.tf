@@ -1,3 +1,11 @@
+variable "acm_certificate_arn" {
+  type = string
+}
+
+variable "cache_policy_id" {
+  type = string
+}
+
 variable "fqdn" {
   type = string
 }
