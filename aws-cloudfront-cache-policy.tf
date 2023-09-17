@@ -7,13 +7,21 @@ resource "aws_cloudfront_cache_policy" "proxy" {
 
   parameters_in_cache_key_and_forwarded_to_origin {
     cookies_config {
-      cookie_behavior = "whitelist"
+      cookie_behavior = "all"
     }
     headers_config {
       header_behavior = "whitelist"
+      headers = {
+        items = [
+          "Origin",
+          "Host",
+          "Authorization",
+          "Accept-Language"
+        ]
+      }
     }
     query_strings_config {
-      query_string_behavior = "whitelist"
+      query_string_behavior = "all"
     }
   }
 }
