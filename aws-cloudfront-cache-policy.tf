@@ -1,5 +1,5 @@
 resource "aws_cloudfront_cache_policy" "proxy" {
-  name = "proxy with headers"
+  name = "proxy-with-headers"
 
   default_ttl = 3600
   min_ttl     = 1
