@@ -5,7 +5,7 @@ variable "acm_certificate_arn" {
 
 variable "cache_policy_name" {
   type        = string
-  default     = "CachingDisabled"
+  default     = "Managed-CachingDisabled"
   description = "Name of policy applied on cache. Default is CachingDisabled, recommended to use with ApiGateway"
 }
 
@@ -16,7 +16,7 @@ variable "fqdn" {
 
 variable "origin_policy_name" {
   type        = string
-  default     = "AllViewerExceptHostHeader"
+  default     = "Managed-AllViewerExceptHostHeader"
   description = "Name of policy applied on origin. Default is AllViewerExceptHostHeader, recommended to use with ApiGateway"
 }
 
