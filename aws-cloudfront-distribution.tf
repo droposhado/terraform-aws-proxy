@@ -20,18 +20,9 @@ resource "aws_cloudfront_distribution" "proxy" {
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = aws_apigatewayv2_api.proxy.id
 
-    forwarded_values {
-      query_string = false
-
-      cookies {
-        forward = "none"
-      }
-    }
+    cache_policy_id = aws_cloudfront_cache_policy.proxy.id
 
     viewer_protocol_policy = "redirect-to-https"
-    min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
   }
 
   viewer_certificate {
