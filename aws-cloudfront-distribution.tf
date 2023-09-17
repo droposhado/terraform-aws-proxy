@@ -20,7 +20,8 @@ resource "aws_cloudfront_distribution" "proxy" {
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = aws_apigatewayv2_api.proxy.id
 
-    cache_policy_id = var.cache_policy_id
+    cache_policy_id          = aws_cloudfront_cache_policy.proxy.id
+    origin_access_control_id = aws_cloudfront_origin_request_policy.proxy.id
 
     viewer_protocol_policy = "redirect-to-https"
   }
